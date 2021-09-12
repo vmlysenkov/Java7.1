@@ -40,19 +40,38 @@
                 <executions>
                     <execution>
                         <id>prepare-agent-2106</id>
-<!--                        <phase>initialize</phase>-->
+                        <!--                        <phase>initialize</phase>-->
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
                     <execution>
                         <id>report-45454534</id>
-<!--                        <phase>verify</phase>-->
+                        <!--                        <phase>verify</phase>-->
                         <goals>
                             <goal>report</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>check-09876543</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
                 </executions>
+                <configuration>
+                    <rules>
+                        <rule>
+                            <limits>
+                                <limit>
+                                    <counter>BRANCH</counter>
+                                    <value>COVEREDRATIO</value>
+                                    <minimum>100%</minimum>
+                                </limit>
+                            </limits>
+                        </rule>
+                    </rules>
+                </configuration>
             </plugin>
         </plugins>
     </build>
